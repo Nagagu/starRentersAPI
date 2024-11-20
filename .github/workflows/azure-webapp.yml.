@@ -3,7 +3,7 @@ name: Deploy .NET Core app to Azure Web App
 on:
   push:
     branches:
-      - main  # Cambia a la rama que usas
+      - main  # Cambia a la rama que uses
 
 jobs:
   build:
