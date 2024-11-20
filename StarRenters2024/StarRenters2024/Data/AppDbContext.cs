@@ -7,9 +7,9 @@ namespace StarRentersAPI.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<Review>? Reviews { get; set; }
+        public DbSet<Tenant> Tenants { get; set; } // DbSet para la entidad Tenant
 
+        // Puedes añadir otros DbSets si tienes más entidades, por ejemplo, Reviews
+        public DbSet<Review> Reviews { get; set; }
     }
 }
-
-

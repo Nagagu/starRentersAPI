@@ -40,6 +40,21 @@ namespace StarRenters2024.Controllers
             return review!;
         }
 
+        [HttpGet("byTenantName/{tenantName}")]
+        public async Task<ActionResult<IEnumerable<Review>>> GetReviewsByTenant(string tenantName)
+        {
+            var reviews = await _context.Reviews
+                .Where(r => r.TenantName.ToLower().Contains(tenantName.ToLower()))
+                .ToListAsync();
+
+            if (reviews == null || !reviews.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(reviews);
+        }
+
         // Crear una nueva reseña
         [HttpPost]
         public async Task<ActionResult<Review>> CreateReview(Review review)
