@@ -36,7 +36,7 @@ namespace StarRenters2024.Controllers
                 return NotFound();
             }
 
-            // Aquí indicamos al compilador que review no es null, ya que se comprobó previamente
+          
             return review!;
         }
 
